@@ -1,0 +1,83 @@
+Skill 1 Attack: Damage Formula: a.atk * 4 - b.def * 2
+Skill 3 Silence Shriek: Damage Formula: 0 + a.mat * 3
+Skill 5 AttackM: Damage Formula: a.mat * 4 - b.mdf * 2
+Skill 6 AttackF: Damage Formula: a.atk * 4 - b.def * 2
+Skill 200 Silence Shriek: Damage Formula: 0 + a.mat * 3 - b.mdf * 0.6
+Skill 201 Heal: Damage Formula: 60 + a.mat * 1.2
+Skill 202 Ice Blast: Damage Formula: 0 + a.mat * 3 - b.mdf * 0.6
+Skill 203 Mana Drain: Damage Formula: 20  - b.mdf * 0.4
+Skill 204 Health Drain: Damage Formula: 35  - b.mdf * 0.4
+Skill 205 Furious Swipes: Damage Formula: 5 + a.atk * 1.3 - b.def * 0.5
+Skill 210 Graveyard Barrage: Damage Formula: 500 + a.atk * 3 - b.def * 0.4
+Skill 211 Double Strike: Damage Formula: a.atk * 4 - b.def * 2
+Skill 212 Steady Strike: Damage Formula: a.atk * 3
+Skill 213 Holy Nova: Damage Formula: a.mat * 2.8 - b.mdf * 0.6
+Skill 214 Rock Throw: Damage Formula: a.atk * 2.1 - b.def
+Skill 215 Explosion: Damage Formula: r = 30 + a.mat; a.hp = 0; r - b.mdf * 0.4;
+Skill 216 Smite: Damage Formula: a.mat * 3.5 - b.mdf * 1.6
+Skill 217 Flurry: Damage Formula: 25 + a.atk * 1.5 - b.def * 0.4
+Skill 218 Void Blight: Damage Formula: 20 + a.mat * 3 - b.mdf * 0.6
+Skill 219 Void Pulse: Damage Formula: a.mat * 3 - b.mdf * 0.6
+Skill 220 Cosmic Flay: Damage Formula: 10 + a.atk * 3 - b.def * 0.4
+Skill 221 Cosmic Acid: Damage Formula: 10 + a.mat * 3 - b.mdf * 0.6
+Skill 222 Burrow Down: Damage Formula: 1 + a.atk * 0.04 - b.def * 0.02
+Skill 223 Burrow Up: Damage Formula: a.remove_state(34); 50 + a.atk * 2.5 - b.def * 0.5
+Skill 224 Quill Shot: Damage Formula: a.atk * 1.8 - b.def * 0.4
+Skill 225 Eye Peck: Damage Formula: 10 + a.atk * 2 - b.def * 0.4
+Skill 226 Absorb: Damage Formula: a.mat * 2  - b.mdf * 0.4
+Skill 227 Poison Arrow: Damage Formula: 20 + a.atk * 3 - b.def * 0.6
+Skill 230 Drain Life: Damage Formula: a.atk * 2  - b.mdf * 0.4
+Skill 231 Acid: Damage Formula: a.mat * 1.9 - b.mdf * 0.6
+Skill 232 Quake: Damage Formula: a.atk * 3 - b.def * 0.4
+Skill 234 Whirlwind: Damage Formula: 20 + a.atk * 2.2 - b.def * 0.5
+Skill 235 Fireball: Damage Formula: 30 + m.atk * 3.6 - b.mdef * 0.5
+Skill 237 Cosmos Bend: Damage Formula: a.mat * 3.6 - b.mdf * 0.6
+Skill 238 Corrupt Mind: Damage Formula: a.mat * 3.6 - b.mdf * 0.6
+Skill 239 Suicide: Damage Formula: a.hp
+Skill 240 Firestorm: Damage Formula: m.atk * 3 - b.def * 0.4
+Skill 241 Flame Shock: Damage Formula: a.mat * 2 - b.mdf * 0.4
+Skill 242 Lava Lash: Damage Formula: a.atk * 3.5 - b.mdf * 0.4
+Skill 244 Blitz: Damage Formula: a.atk * 2.5
+Skill 245 Flame Tackle: Damage Formula: a.atk * 3.5 - b.def * 0.5
+Skill 248 Grenades: Damage Formula: a.atk * 3.5 - b.def * 0.4
+Skill 251 Bombs Away: Damage Formula: a.atk * 3.9 - b.def * 0.3
+Skill 253 Flame Bubbles: Damage Formula: 0 + a.mat * 2.4 - b.mdf * 0.4
+Skill 254 Melt: Damage Formula: 0 + a.mat * 2.8
+Skill 255 Hot Flash: Damage Formula: 0 + a.mat * 0.2 - b.mdf * 0.1
+Skill 256 Charge up: Damage Formula: ( a.atk * 4 - b.def * 2 ) * 2
+Skill 257 Cold Smash: Damage Formula: a.remove_state(42); ( a.atk * 4 - b.def * 2 ) * 2
+Item 1 Healing Herb: Damage Formula: 
+Item 5 Healing Celery: Damage Formula: 
+Map 9 Dungeon 3 - Event 103 inter1 (40,20) - Page 1 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 103 inter1 (40,20) - Page 2 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x + 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 103 inter1 (40,20) - Page 2 Line 5:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y + 1 == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 103 inter1 (40,20) - Page 2 Line 9:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 104 inter2 (40,27) - Page 1 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y - 1 == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 104 inter2 (40,27) - Page 1 Line 5:  - Conditional Branch script call: ($game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y + 1 == $game_map.events[109].y) or ($game_map.events[@event_id].x + 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y)
+Map 9 Dungeon 3 - Event 104 inter2 (40,27) - Page 1 Line 9:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 104 inter2 (40,27) - Page 2 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y - 1 == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 104 inter2 (40,27) - Page 2 Line 5:  - Conditional Branch script call: ($game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y + 1 == $game_map.events[109].y) or ($game_map.events[@event_id].x + 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y)
+Map 9 Dungeon 3 - Event 104 inter2 (40,27) - Page 2 Line 9:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 105 inter4 (47,41) - Page 1 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y - 1 == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 105 inter4 (47,41) - Page 1 Line 5:  - Conditional Branch script call: ($game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y + 1 == $game_map.events[109].y) or ($game_map.events[@event_id].x - 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y)
+Map 9 Dungeon 3 - Event 105 inter4 (47,41) - Page 1 Line 9:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 105 inter4 (47,41) - Page 2 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y + 1 == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 105 inter4 (47,41) - Page 2 Line 5:  - Conditional Branch script call: ($game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y - 1 == $game_map.events[109].y) or ($game_map.events[@event_id].x - 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y)
+Map 9 Dungeon 3 - Event 105 inter4 (47,41) - Page 2 Line 9:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 106 inter3 (40,41) - Page 1 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x - 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 106 inter3 (40,41) - Page 1 Line 5:  - Conditional Branch script call: $game_map.events[@event_id].x + 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 106 inter3 (40,41) - Page 1 Line 9:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 106 inter3 (40,41) - Page 2 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x - 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 106 inter3 (40,41) - Page 2 Line 5:  - Conditional Branch script call: $game_map.events[@event_id].x + 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 106 inter3 (40,41) - Page 2 Line 9:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 107 inter5 (35,41) - Page 1 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x + 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 107 inter5 (35,41) - Page 1 Line 5:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y + 1 == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 107 inter5 (35,41) - Page 1 Line 9:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 107 inter5 (35,41) - Page 2 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 109 cart (48,6) - Page 2 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == 48 and $game_map.events[@event_id].y == 6
+Map 9 Dungeon 3 - Event 110 inter6 (35,47) - Page 1 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x + 1 == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 110 inter6 (35,47) - Page 1 Line 5:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y - 1 == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 110 inter6 (35,47) - Page 1 Line 9:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 110 inter6 (35,47) - Page 2 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 113 inter7 (17,34) - Page 1 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y
+Map 9 Dungeon 3 - Event 113 inter7 (17,34) - Page 2 Line 1:  - Conditional Branch script call: $game_map.events[@event_id].x == $game_map.events[109].x and $game_map.events[@event_id].y == $game_map.events[109].y

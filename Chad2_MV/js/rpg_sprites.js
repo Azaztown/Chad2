@@ -1,5 +1,5 @@
 //=============================================================================
-// rpg_sprites.js
+// rpg_sprites.js v1.3.4
 //=============================================================================
 
 //-----------------------------------------------------------------------------
@@ -843,7 +843,11 @@ Sprite_Actor.prototype.motionSpeed = function() {
 
 Sprite_Actor.prototype.refreshMotion = function() {
     var actor = this._actor;
+    var motionGuard = Sprite_Actor.MOTIONS['guard'];
     if (actor) {
+        if (this._motion === motionGuard && !BattleManager.isInputting()) {
+                return;
+        }
         var stateMotion = actor.stateMotionIndex();
         if (actor.isInputting() || actor.isActing()) {
             this.startMotion('walk');
@@ -1179,6 +1183,7 @@ Sprite_Animation._checker2 = {};
 
 Sprite_Animation.prototype.initialize = function() {
     Sprite.prototype.initialize.call(this);
+    this._reduceArtifacts = true;
     this.initMembers();
 };
 
@@ -1424,7 +1429,7 @@ Sprite_Animation.prototype.updateCellSprite = function(sprite, cell) {
         sprite.scale.y = cell[3] / 100;
         sprite.opacity = cell[6];
         sprite.blendMode = cell[7];
-        sprite.visible = this._target.visible;
+        sprite.visible = true;
     } else {
         sprite.visible = false;
     }
@@ -1902,6 +1907,7 @@ Sprite_Picture.prototype.initialize = function(pictureId) {
     Sprite.prototype.initialize.call(this);
     this._pictureId = pictureId;
     this._pictureName = '';
+    this._isPicture = true;
     this.update();
 };
 
@@ -2286,7 +2292,11 @@ Spriteset_Map.prototype.createParallax = function() {
 };
 
 Spriteset_Map.prototype.createTilemap = function() {
-    this._tilemap = new Tilemap();
+    if (Graphics.isWebGL()) {
+        this._tilemap = new ShaderTilemap();
+    } else {
+        this._tilemap = new Tilemap();
+    }
     this._tilemap.tileWidth = $gameMap.tileWidth();
     this._tilemap.tileHeight = $gameMap.tileHeight();
     this._tilemap.setData($gameMap.width(), $gameMap.height(), $gameMap.data());
@@ -2303,8 +2313,12 @@ Spriteset_Map.prototype.loadTileset = function() {
         for (var i = 0; i < tilesetNames.length; i++) {
             this._tilemap.bitmaps[i] = ImageManager.loadTileset(tilesetNames[i]);
         }
-        this._tilemap.flags = $gameMap.tilesetFlags();
-        this._tilemap.refresh();
+        var newTilesetFlags = $gameMap.tilesetFlags();
+        this._tilemap.refreshTileset();
+        if (!this._tilemap.flags.equals(newTilesetFlags)) {
+            this._tilemap.refresh();
+        }
+        this._tilemap.flags = newTilesetFlags;
     }
 };
 
@@ -2351,10 +2365,27 @@ Spriteset_Map.prototype.updateTileset = function() {
     }
 };
 
+/*
+ * Simple fix for canvas parallax issue, destroy old parallax and readd to  the tree.
+ */
+Spriteset_Map.prototype._canvasReAddParallax = function() {
+    var index = this._baseSprite.children.indexOf(this._parallax);
+    this._baseSprite.removeChild(this._parallax);
+    this._parallax = new TilingSprite();
+    this._parallax.move(0, 0, Graphics.width, Graphics.height);
+    this._parallax.bitmap = ImageManager.loadParallax(this._parallaxName);
+    this._baseSprite.addChildAt(this._parallax,index);
+};
+
 Spriteset_Map.prototype.updateParallax = function() {
     if (this._parallaxName !== $gameMap.parallaxName()) {
         this._parallaxName = $gameMap.parallaxName();
-        this._parallax.bitmap = ImageManager.loadParallax(this._parallaxName);
+
+        if (this._parallax.bitmap && Graphics.isWebGL() != true) {
+            this._canvasReAddParallax();
+        } else {
+            this._parallax.bitmap = ImageManager.loadParallax(this._parallaxName);
+        }
     }
     if (this._parallax.bitmap) {
         this._parallax.origin.x = $gameMap.parallaxOx();

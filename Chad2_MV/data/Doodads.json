@@ -1,3 +1,28 @@
 [
-  null
+  null,
+  null,
+  null,
+  null,
+  null,
+  [
+    {
+      "folder": "World/",
+      "bitmap": "BetterTreeTops",
+      "hue": 0,
+      "x": 1007,
+      "y": 4033,
+      "z": 5,
+      "iconIndex": 0,
+      "anchorX": 0.5,
+      "anchorY": 1,
+      "scaleX": 100,
+      "scaleY": 100,
+      "blend": 0,
+      "opacity": 255,
+      "xFrames": 1,
+      "yFrames": 1,
+      "frameUpdate": 20,
+      "smooth": false
+    }
+  ]
 ]

@@ -2,7 +2,7 @@
 null,
 {"id":1,"expanded":false,"name":"Path to Juicetown","order":3,"parentId":30,"scrollX":1081.3333333333333,"scrollY":610.6666666666666},
 {"id":2,"expanded":false,"name":"START","order":20,"parentId":0,"scrollX":1092,"scrollY":621.3333333333334},
-{"id":3,"expanded":false,"name":"Void","order":19,"parentId":0,"scrollX":1110.6666666666667,"scrollY":604.6666666666666},
+{"id":3,"expanded":false,"name":"Void","order":19,"parentId":0,"scrollX":1280.7272727272727,"scrollY":1900.3636363636365},
 {"id":4,"expanded":false,"name":"Dungeon 4?","order":38,"parentId":17,"scrollX":1092,"scrollY":621.3333333333334},
 {"id":5,"expanded":true,"name":"Second Dungeon Bottom","order":22,"parentId":8,"scrollX":2613.3333333333335,"scrollY":1461.3333333333333},
 {"id":6,"expanded":false,"name":"Atlee's shabby cabin","order":23,"parentId":5,"scrollX":982.8,"scrollY":553.8},
